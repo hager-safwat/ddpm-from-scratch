@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ddpm-from-scratch"
+version = "0.2.0"
+description = "A minimal DDPM on 2-D data, written from scratch"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Hager Othman", email = "hagersafwat94@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = ["numpy", "torch"]
+keywords = ["ddpm","diffusion","generative model","pytorch"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.optional-dependencies]
+demo = ["matplotlib"]
+dev = ["matplotlib", "pytest", "ruff"]
+
+[project.urls]
+Repository = "https://github.com/hager-safwat/ddpm-from-scratch"
+
+[tool.setuptools]
+packages = ["ddpm"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
